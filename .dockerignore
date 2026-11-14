@@ -1,0 +1,9 @@
+.venv/
+.idea/
+__pycache__/
+*.pyc
+static/uploaded/*
+!static/uploaded/.gitkeep
+.env
+.git/
+README.md
