@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>ЛР3 — Вариант 7</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    function onCaptcha(token) {
+      document.getElementsByName('resp')[0].value = token;
+    }
+  </script>
+</head>
+<body>
+  <h1>Перестановка цветовых каналов r, g, b</h1>
+
+  <fieldset>
+    <legend>Параметры обработки</legend>
+    <form action="/image_form" method="post" enctype="multipart/form-data">
+      <p>
+        <label>Порядок каналов (перестановка из r, g, b):<br>
+          <input name="order" value="grb" pattern="[rgb]{3}" required>
+        </label>
+      </p>
+      <p>
+        <label>Изображение:<br>
+          <input name="files" type="file" accept="image/*" required>
+        </label>
+      </p>
+      <input type="hidden" name="resp" value="">
+      <div class="g-recaptcha"
+           data-sitekey="{{ site_key }}"
+           data-callback="onCaptcha"></div>
+      <p><button type="submit">Обработать</button></p>
+    </form>
+  </fieldset>
+</body>
+</html>

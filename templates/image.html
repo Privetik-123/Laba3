@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Результат — вариант 7</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <h1>Результат</h1>
+  <p>Порядок каналов: <b>{{ order }}</b></p>
+
+  <fieldset>
+    <legend>Изображения</legend>
+    <table>
+      <tr><th>Исходное</th><th>Новое</th></tr>
+      <tr>
+        <td><img src="/static/uploaded/orig_{{ name }}.jpg" width="300"></td>
+        <td><img src="/static/uploaded/new_{{ name }}.jpg"  width="300"></td>
+      </tr>
+    </table>
+  </fieldset>
+
+  <fieldset>
+    <legend>Распределение цветов (гистограммы)</legend>
+    <table>
+      <tr><th>Исходное</th><th>Новое</th></tr>
+      <tr>
+        <td><img src="/static/uploaded/hist_orig_{{ name }}.png" width="400"></td>
+        <td><img src="/static/uploaded/hist_new_{{ name }}.png"  width="400"></td>
+      </tr>
+    </table>
+  </fieldset>
+
+  <fieldset>
+    <legend>Среднее значение цвета по вертикали</legend>
+    <table>
+      <tr><th>Исходное</th><th>Новое</th></tr>
+      <tr>
+        <td><img src="/static/uploaded/meanV_orig_{{ name }}.png" width="400"></td>
+        <td><img src="/static/uploaded/meanV_new_{{ name }}.png"  width="400"></td>
+      </tr>
+    </table>
+  </fieldset>
+
+  <fieldset>
+    <legend>Среднее значение цвета по горизонтали</legend>
+    <table>
+      <tr><th>Исходное</th><th>Новое</th></tr>
+      <tr>
+        <td><img src="/static/uploaded/meanH_orig_{{ name }}.png" width="400"></td>
+        <td><img src="/static/uploaded/meanH_new_{{ name }}.png"  width="400"></td>
+      </tr>
+    </table>
+  </fieldset>
+
+  <p><a href="/image_form">← Обработать другое изображение</a></p>
+</body>
+</html>
